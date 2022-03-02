@@ -8,14 +8,14 @@ public class App {
 
     public static void main(String[] args) {
         //Ejercicio 1
-        int [][] matrix = new int[4][4];
+        /* int [][] matrix = new int[4][4];
         int option;
         boolean matrixFilled = false; 
         do{
             option = Matrix.DisplayMenu(matrixFilled);
             Matrix.OptionCases(option, matrix, matrixFilled);
         }while(option != 7);
-        System.out.println("Hasta Luego ;)");
+        System.out.println("Hasta Luego ;)"); */
 
 
 
@@ -34,24 +34,35 @@ public class App {
 
 
         //3 en raya *********
-        /* TicTacToe game = new TicTacToe();
+        TicTacToe game = new TicTacToe();
         int row, column;
         boolean correct, validPosition;
 
         while (!game.endofgame()) {
             do{
-                game.showCurrentTurn()
-                game.showBoard()
-                correct = false
-                row = game.setRow();
-                column = game.setColumn();
+                game.showCurrentTurn();
+                game.showBoard();
+                correct = false;
+                row = game.setNumber("Ingrese la fila");
+                column = game.setNumber("Ingrese la columna");
                 validPosition = game.validatePosition(row, column);
-                if (validatePosition){
-                    if(game)
+                if (validPosition){
+                    if(game.positionFilled(row, column)){
+                        correct = true;
+                    }
+                    else{
+                        System.out.println("Ya hay una maraca en esta posición");
+                    }
                 }
-
-            }
-        } */
+                else{
+                    System.out.println("La posición no es validad");
+                }
+            }while(!correct);
+            game.insertIntoPosition(row, column);
+            game.changeTurn();
+        }
+        game.showBoard();
+        game.showWinner();
 	}
 
 }
