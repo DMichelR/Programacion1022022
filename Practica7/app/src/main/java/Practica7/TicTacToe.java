@@ -98,19 +98,102 @@ public class TicTacToe {
         boolean match;
         for ( int i = 0; i < board.length; i++){
             match = true;
+            symbol = board[i][0];
+            if (symbol != empty){
+                for(int j = 0; j < board[0].length; j++){
+                    if (symbol != board[i][j]){
+                        match = false;
+                    }
+                }
+                if (match){
+                    return symbol;
+                }
+            }
         }
-        return 0;
+        return empty;
     }
 
     private char columnMatch() {
-        return 0;
+        char symbol;
+        boolean match;
+        for ( int i = 0; i < board.length; i++){
+            match = true;
+            symbol = board[0][i];
+            if (symbol != empty){
+                for(int j = 0; j < board[0].length; j++){
+                    if (symbol != board[j][i]){
+                        match = false;
+                    }
+                }
+                if (match){
+                    return symbol;
+                }
+            }
+        }
+        return empty;
     }
 
     private char diagonalMatch() {
-        return 0;
+        char symbol;
+        boolean match = true;
+        symbol = board[0][0];
+        if (symbol != empty){
+            for ( int i = 0; i < board.length; i++){
+                if (symbol != board[i][i]){
+                    match = false;
+                }
+            }
+            if (match){
+                return symbol;
+            }
+        }
+        match = true;
+        symbol = board[0][2];
+        if (symbol != empty){
+            for (int i = 1, j = 1; i < board.length; i++, j--){
+                if(symbol != board[i][j]){
+                    match = false;
+                }
+            }
+            if (match){
+                return symbol;
+            }
+        }
+        return empty;
     }
     
     public void showWinner() {
+        char symbol = rowMatch();
+        if (symbol != empty){
+            if (symbol == player1){
+                System.out.println("Ha ganado el Jugador 1");
+            }
+            else{
+                System.out.println("Ha ganado el Jugador 2");
+            }
+            return;
+        }
+        symbol = columnMatch();
+        if (symbol != empty){
+            if (symbol == player1){
+                System.out.println("Ha ganado el Jugador 1");
+            }
+            else{
+                System.out.println("Ha ganado el Jugador 2");
+            }
+            return;
+        }
+        symbol = diagonalMatch();
+        if (symbol != empty){
+            if (symbol == player1){
+                System.out.println("Ha ganado el Jugador 1");
+            }
+            else{
+                System.out.println("Ha ganado el Jugador 2");
+            }
+            return;
+        }
+
     }
     
 }
