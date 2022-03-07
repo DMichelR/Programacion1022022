@@ -4,11 +4,13 @@
 package Assignment8;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        String input = "Según un estudio de una universidad inglesa, no importa el orden en el que las letras están escritas, la única cosa importante es que la primera y última letra estén escritas en la posición correcta. El resto pueden estar totalmente mal y aún podrás leerlo sin problemas. Esto es porque no leemos cada letra por sí misma. sino la palabra como un todo. Personalmente me parece increíble.";
+            
+        Assignment_8 d = new Assignment_8(input);
+            
+        System.out.println(d);
     }
 }

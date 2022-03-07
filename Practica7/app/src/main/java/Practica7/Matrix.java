@@ -129,7 +129,7 @@ public class Matrix {
 
     public static void CalculateMean(int[][] matrix) {
         int sum = 0;
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 4;){
             for(int j = 0; 0 < 4; j++){
                 sum = sum + matrix[i][j];
             }
