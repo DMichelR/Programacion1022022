@@ -17,9 +17,11 @@ public class Assignment_8 {
         Random rnd = new Random();
         for (int i=0; i < input.length; i++){
             aux = input[i].toCharArray();
-            if (input[i].length() > 2){
-                for (int j=1; j < input[i].length()-1; j++){
-                    int index = rnd.nextInt(input[i].length()-2) +1;
+            int comma;
+            if (input[i].length() > 3){
+                comma = (aux[aux.length -1] == ',') || (aux[aux.length -1] == '.')? 2 : 1;
+                for (int j=1; j < input[i].length()-comma; j++){
+                    int index = rnd.nextInt(input[i].length()-3) +1;
                     charAux1 = aux[j];
                     charAux2 = aux[index];
                     aux[j] = charAux2;
