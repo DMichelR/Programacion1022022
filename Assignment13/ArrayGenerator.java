@@ -23,7 +23,7 @@ public class ArrayGenerator {
         int random, aux = 0;
         int i = 0;
         boolean valid = true;
-        while(i < array.length){
+        do{
             random = rnd.nextInt(cant);
             aux = 0;
             valid = true;
@@ -44,7 +44,7 @@ public class ArrayGenerator {
                 array[i] = random;
                 i++;
             }
-        }
+        }while(i < array.length);
     }
 
     public int fibonacci(int n){
